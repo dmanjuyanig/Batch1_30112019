@@ -33,7 +33,7 @@ public class TestUtils extends TestSetup{
 		String formatedDate = dateFormate.format(date);
 		String archiveTestReportName = formatedDate + "_" + reportName;
 
-		File oldReport = new File(lastTestReportFilePath);
+		File oldReport = new File(lastTestReportFilePath + reportName);
 
 		File newFile = new File(archiveReportPath + archiveTestReportName);
 		

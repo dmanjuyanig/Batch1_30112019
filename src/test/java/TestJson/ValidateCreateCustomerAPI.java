@@ -63,7 +63,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		Assert.assertNotNull(idValue);
 	}*/
 	
-	/*@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp", priority =3)
+	@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp", priority =3)
 	public void validateAPIWithInvalidSecretKey(Hashtable<String, String> data)
 	{
 		testLevelLog.get().assignAuthor("Kruthi Reddy");
@@ -134,9 +134,17 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		//Assert that that ID field is null
 		String idValue = response.jsonPath().get("id");
 		Assert.assertNull(idValue);
+	}
+	
+	/*@Test(dataProvider="dp",dataProviderClass = DataProviderClass.class)
+	public void validateAPIWithoutValidSecretKey(Hashtable<String, String> data)
+	{
+		System.out.println("Email---> " +data.get("email"));
+		System.out.println("Description---> " +data.get("description"));
+		System.out.println("Email---> " +data.get("email"));
 	}*/
 	
-	@Test
+/*	@Test
 	public void validateFail()
 	{
 		Assert.fail();
@@ -146,7 +154,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 	public void validateSkip()
 	{
 		//this will skip
-	}
+	}*/
 	
 
 }

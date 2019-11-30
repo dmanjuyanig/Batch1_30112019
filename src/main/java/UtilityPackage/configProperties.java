@@ -31,7 +31,7 @@ public interface configProperties extends Config{
 	@Key("testReportName")
 	String getTestReportName();
 	
-	@Key("testDataSheetName")
+	@Key("testDataSheet")
 	String getTestDataSheetName();
 	
 	@Key("successresponsecode")
