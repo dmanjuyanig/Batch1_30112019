@@ -18,6 +18,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.w2a.API_Batch4_Rest_AFramework.util.Extentmanager;
 
 import UtilityPackage.ExcelReader;
+import UtilityPackage.TestUtils;
 import UtilityPackage.configProperties;
 import io.restassured.RestAssured;
 
@@ -44,8 +45,8 @@ public class TestSetup{
 		
 		extent = Extentmanager.GetExtent("./AutomationReport.html");
 		
-	/*	TestUtils.archiveTestReport();
-		extentReport = Extentmanager
+		TestUtils.archiveTestReport();
+		/*extent = Extentmanager
 				.GetExtent(config.getTestReportFilepath() + config.getTestReportName());*/
 
 	
@@ -102,5 +103,10 @@ public class TestSetup{
 	@AfterSuite
 	public void afterSuite() {
 	
+	}
+	
+	public static void logResponseInReport(String Response)
+	{
+		testLevelLog.get().info(Response);
 	}
 }

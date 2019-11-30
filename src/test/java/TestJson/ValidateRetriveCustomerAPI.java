@@ -14,16 +14,21 @@ public class ValidateRetriveCustomerAPI extends TestSetup{
 	
 
 	@Test (priority=1)
-	public void ValidateCreateCusAPIWithValidSK()
+	public void RetriveCustomerAPI()
 	{
-		
+		testLevelLog.get().assignAuthor("Aadvike Reddy");
+		testLevelLog.get().assignCategory("Exploratory");
 		Response response = given().formParams("id", "1")
 				.get("http://localhost:8080/SmartUtilityApi/rest/resource/getemployee/1");
 		
 		response.prettyPrint();
+		testLevelLog.get().info(response.body().asString());
 		
 		//Assert to verify the status code
+		testLevelLog.get().info("Status code inthe response :- " +response.getStatusCode());
 		Assert.assertEquals(response.statusCode(), config.getSuccessResponseCode());
+		
+		testLevelLog.get().info("Status code inthe response :- " +response.jsonPath().get("id"));
 		
 		//Assert to verify the status line
 		Assert.assertEquals(response.statusLine(), config.getStatusLine());

@@ -24,13 +24,15 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		Response response = CreateCustomerAPI.sendPostRequestToCreateCustomerWithValidSecretKey(data.get("email"), data.get("description"), 
 				config.getValidSecretKey(), config.getCustomerAPIEndPoint());
 		
-		testLevelLog.get().info(response.body().asString());
+		//testLevelLog.get().info(response.body().asString());
+		logResponseInReport(response.asString());
 		
 		response.prettyPrint();
 		
 		//Assert to verify the status code
 		testLevelLog.get().info("Status code inthe response :- " +response.getStatusCode());
 		Assert.assertEquals(response.statusCode(), 200);
+		Assert.assertEquals(response.statusCode(), config.getSuccessResponseCode());
 		
 		//Assert to json response body contains ID field
 		testLevelLog.get().info("Status code inthe response :- " +response.jsonPath().get("id"));
@@ -61,7 +63,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		Assert.assertNotNull(idValue);
 	}*/
 	
-	@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp", priority =3)
+	/*@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp", priority =3)
 	public void validateAPIWithInvalidSecretKey(Hashtable<String, String> data)
 	{
 		testLevelLog.get().assignAuthor("Kruthi Reddy");
@@ -132,6 +134,19 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		//Assert that that ID field is null
 		String idValue = response.jsonPath().get("id");
 		Assert.assertNull(idValue);
+	}*/
+	
+	@Test
+	public void validateFail()
+	{
+		Assert.fail();
 	}
+	
+	@Test(dependsOnMethods = "validateFail")
+	public void validateSkip()
+	{
+		//this will skip
+	}
+	
 
 }

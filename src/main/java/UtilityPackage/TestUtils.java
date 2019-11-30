@@ -21,12 +21,11 @@ public class TestUtils extends TestSetup{
 		//return json.contains(key);
 	}
 
-	public static void archiveTestReport() {
-
-
+	public static void archiveTestReport() 
+	{
 		String reportName = config.getTestReportName();
 
-		String lastTestReportFilePath = System.getProperty("user.dir")+"/src/test/resources/testReports/";
+		String lastTestReportFilePath = System.getProperty("user.dir")+"./AutomationReport.html";
 		String archiveReportPath = System.getProperty("user.dir")+"/src/test/resources/archivedTestReport/";
 
 		Date date = new Date();
@@ -34,13 +33,14 @@ public class TestUtils extends TestSetup{
 		String formatedDate = dateFormate.format(date);
 		String archiveTestReportName = formatedDate + "_" + reportName;
 
-		File oldReport = new File(lastTestReportFilePath + reportName);
+		File oldReport = new File(lastTestReportFilePath);
 
 		File newFile = new File(archiveReportPath + archiveTestReportName);
 		
 		System.out.println(oldReport.exists());
 		
-		if (oldReport.exists()) {
+		if (oldReport.exists()) 
+		{
 			System.out.println("inside if");
 			oldReport.renameTo(newFile);
 			oldReport.delete();

@@ -5,9 +5,13 @@
     <classes>
       <class name="TestJson.ValidateRetriveCustomerAPI">
         <methods>
-          <include name="ValidateCreateCusAPIWithValidSK"/>
           <include name="afterSuite"/>
+          <include name="beforeClass"/>
+          <include name="RetriveCustomerAPI"/>
+          <include name="afterMethod"/>
           <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+          <include name="beforeTest"/>
         </methods>
       </class> <!-- TestJson.ValidateRetriveCustomerAPI -->
     </classes>
