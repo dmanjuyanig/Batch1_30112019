@@ -41,8 +41,9 @@ public class Extentmanager extends TestSetup
 		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);*/
 		
 		//htmlReporter.setAppendExisting(false);
-		htmlReporter.loadXMLConfig(System.getProperty("user.dir")+"\\src\\test\\resources\\configXMLFiles\\ReportsConfig.xml");
+		htmlReporter.loadXMLConfig(System.getProperty("./src/test/resources/configXMLFiles/ReportsConfig.xml"));
 
+		
 		return htmlReporter;
 	}
 }
