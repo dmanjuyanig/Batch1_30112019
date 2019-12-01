@@ -3,20 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestJson.ValidateCreateCustomerAPI">
+      <class name="TestCasesScript.RetriveCustomer">
         <methods>
-          <include name="validateAPIWithValidSecretKey"/>
           <include name="afterSuite"/>
           <include name="beforeClass"/>
           <include name="afterMethod"/>
-          <include name="validateAPIWithInvalidParameter"/>
+          <include name="RetriveCustomerValidSecretKey"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
-          <include name="validateAPIWithInvalidSecretKey"/>
           <include name="beforeTest"/>
-          <include name="validateAPIWithValidParameters"/>
         </methods>
-      </class> <!-- TestJson.ValidateCreateCustomerAPI -->
+      </class> <!-- TestCasesScript.RetriveCustomer -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

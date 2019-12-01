@@ -1,5 +1,25 @@
 package APIPackage;
 
-public class RetriveCustomerAPI {
+import static io.restassured.RestAssured.given;
 
+import SetUpPackage.TestSetup;
+import io.restassured.response.Response;
+
+public class RetriveCustomerAPI extends TestSetup 
+{
+	public static Response GetRequestToCreateCustomerWithValidSecretKey(String validSecretKey, String endPoint)
+	{
+		Response response = given().auth().basic(validSecretKey, "")
+		.get(endPoint);
+		
+		return response;
+	}
+	
+	public static Response GetRequestToCreateCustomerWithInvalidSecretKey(String inValidSecretKey, String endPoint)
+	{
+		Response response = given().auth().basic(inValidSecretKey, "")
+		.get(endPoint);
+		
+		return response;
+	}
 }

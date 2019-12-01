@@ -104,6 +104,6 @@ public class DataProviderClass extends TestSetup{
 		}
 
 		return data;
-	}
-*/
+	}*/
+
 }

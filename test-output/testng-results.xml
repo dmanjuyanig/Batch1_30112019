@@ -1,127 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="6" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="6568" started-at="2019-11-30T18:27:08Z" finished-at="2019-11-30T18:27:15Z">
+  <suite name="Default suite" duration-ms="4134" started-at="2019-12-01T14:37:41Z" finished-at="2019-12-01T14:37:45Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="6568" started-at="2019-11-30T18:27:08Z" finished-at="2019-11-30T18:27:15Z">
-      <class name="TestJson.ValidateCreateCustomerAPI">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="beforeSuite" is-config="true" duration-ms="1010" started-at="2019-11-30T18:27:07Z" finished-at="2019-11-30T18:27:08Z">
+    <test name="Default test" duration-ms="4134" started-at="2019-12-01T14:37:41Z" finished-at="2019-12-01T14:37:45Z">
+      <class name="TestCasesScript.UpdateCustomer">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:TestCasesScript.UpdateCustomer@4c371370]" name="beforeSuite" is-config="true" duration-ms="940" started-at="2019-12-01T14:37:40Z" finished-at="2019-12-01T14:37:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="beforeTest" is-config="true" duration-ms="1" started-at="2019-11-30T18:27:08Z" finished-at="2019-11-30T18:27:08Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestCasesScript.UpdateCustomer@4c371370]" name="beforeTest" is-config="true" duration-ms="1" started-at="2019-12-01T14:37:41Z" finished-at="2019-12-01T14:37:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="beforeClass" is-config="true" duration-ms="4" started-at="2019-11-30T18:27:09Z" finished-at="2019-11-30T18:27:09Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestCasesScript.UpdateCustomer@4c371370]" name="beforeClass" is-config="true" duration-ms="6" started-at="2019-12-01T14:37:41Z" finished-at="2019-12-01T14:37:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2019-11-30T18:27:09Z" finished-at="2019-11-30T18:27:09Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestCasesScript.UpdateCustomer@4c371370]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2019-12-01T14:37:41Z" finished-at="2019-12-01T14:37:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void TestJson.ValidateCreateCustomerAPI.validateAPIWithValidSecretKey(java.util.Hashtable)]]>
+                <![CDATA[public void TestCasesScript.UpdateCustomer.RetriveCustomerValidSecretKey()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="validateAPIWithValidSecretKey(java.util.Hashtable)[pri:1, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="validateAPIWithValidSecretKey" duration-ms="4104" started-at="2019-11-30T18:27:09Z" data-provider="dp" finished-at="2019-11-30T18:27:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{email=rest1@gmail.com, description=Test User as been created, expectedStatusCode=200}]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="RetriveCustomerValidSecretKey()[pri:1, instance:TestCasesScript.UpdateCustomer@4c371370]" name="RetriveCustomerValidSecretKey" duration-ms="3561" started-at="2019-12-01T14:37:41Z" finished-at="2019-12-01T14:37:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateAPIWithValidSecretKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="afterMethod" is-config="true" duration-ms="86" started-at="2019-11-30T18:27:13Z" finished-at="2019-11-30T18:27:13Z">
+        </test-method> <!-- RetriveCustomerValidSecretKey -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:TestCasesScript.UpdateCustomer@4c371370]" name="afterMethod" is-config="true" duration-ms="537" started-at="2019-12-01T14:37:45Z" finished-at="2019-12-01T14:37:45Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validateAPIWithValidSecretKey status=SUCCESS method=ValidateCreateCustomerAPI.validateAPIWithValidSecretKey(java.util.Hashtable)[pri:1, instance:TestJson.ValidateCreateCustomerAPI@313ac989] output={null}]]]>
+                <![CDATA[[TestResult name=RetriveCustomerValidSecretKey status=SUCCESS method=UpdateCustomer.RetriveCustomerValidSecretKey()[pri:1, instance:TestCasesScript.UpdateCustomer@4c371370] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="validateAPIWithValidSecretKey(java.util.Hashtable)[pri:1, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="validateAPIWithValidSecretKey" duration-ms="1099" started-at="2019-11-30T18:27:13Z" data-provider="dp" finished-at="2019-11-30T18:27:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{email=rest2@gmail.com, description=Test User as been created, expectedStatusCode=200}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateAPIWithValidSecretKey -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2019-11-30T18:27:13Z" finished-at="2019-11-30T18:27:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void TestJson.ValidateCreateCustomerAPI.validateAPIWithValidSecretKey(java.util.Hashtable)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="afterMethod" is-config="true" duration-ms="77" started-at="2019-11-30T18:27:15Z" finished-at="2019-11-30T18:27:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validateAPIWithValidSecretKey status=SUCCESS method=ValidateCreateCustomerAPI.validateAPIWithValidSecretKey(java.util.Hashtable)[pri:1, instance:TestJson.ValidateCreateCustomerAPI@313ac989] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestJson.ValidateCreateCustomerAPI@313ac989]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-11-30T18:27:15Z" finished-at="2019-11-30T18:27:15Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:TestCasesScript.UpdateCustomer@4c371370]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-12-01T14:37:45Z" finished-at="2019-12-01T14:37:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- TestJson.ValidateCreateCustomerAPI -->
-      <class name="TestJson.ValidateRetriveCustomerAPI">
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:TestJson.ValidateRetriveCustomerAPI@4562e04d]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2019-11-30T18:27:15Z" finished-at="2019-11-30T18:27:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void TestJson.ValidateRetriveCustomerAPI.RetriveCustomerAPI()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:TestJson.ValidateRetriveCustomerAPI@4562e04d]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-11-30T18:27:15Z" finished-at="2019-11-30T18:27:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="RetriveCustomerAPI()[pri:1, instance:TestJson.ValidateRetriveCustomerAPI@4562e04d]" name="RetriveCustomerAPI" duration-ms="255" started-at="2019-11-30T18:27:15Z" finished-at="2019-11-30T18:27:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RetriveCustomerAPI -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:TestJson.ValidateRetriveCustomerAPI@4562e04d]" name="afterMethod" is-config="true" duration-ms="76" started-at="2019-11-30T18:27:15Z" finished-at="2019-11-30T18:27:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=RetriveCustomerAPI status=SUCCESS method=ValidateRetriveCustomerAPI.RetriveCustomerAPI()[pri:1, instance:TestJson.ValidateRetriveCustomerAPI@4562e04d] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- TestJson.ValidateRetriveCustomerAPI -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- TestCasesScript.UpdateCustomer -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

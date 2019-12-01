@@ -63,7 +63,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		Assert.assertNotNull(idValue);
 	}*/
 	
-	@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp", priority =3)
+	/*@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp", priority =3)
 	public void validateAPIWithInvalidSecretKey(Hashtable<String, String> data)
 	{
 		testLevelLog.get().assignAuthor("Kruthi Reddy");
@@ -87,7 +87,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		//Assert that that ID field is null
 		String idValue = response.jsonPath().get("id");
 		Assert.assertNull(idValue);
-	}
+	}*/
 	
 	@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp", priority =4)
 	public void validateAPIWithValidParameters(Hashtable<String, String> data)
@@ -110,7 +110,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		Assert.assertNotNull(idValue);
 	}
 	
-	@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp",priority =5)
+	/*@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp",priority =5)
 	public void validateAPIWithInvalidParameter(Hashtable<String, String> data)
 	{
 		testLevelLog.get().assignAuthor("Aadvike Reddy");
@@ -135,7 +135,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 		String idValue = response.jsonPath().get("id");
 		Assert.assertNull(idValue);
 	}
-	
+	*/
 	/*@Test(dataProvider="dp",dataProviderClass = DataProviderClass.class)
 	public void validateAPIWithoutValidSecretKey(Hashtable<String, String> data)
 	{

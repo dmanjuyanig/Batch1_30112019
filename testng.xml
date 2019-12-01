@@ -6,8 +6,8 @@
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="TestJson.ValidateCreateCustomerAPI"/>
-      <class name="TestJson.ValidateRetriveCustomerAPI"/>
+    <class name="TestCasesScript.CreateCustomer"/>
+    <class name="TestCasesScript.RetriveCustomer"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
