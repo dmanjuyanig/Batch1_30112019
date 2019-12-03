@@ -1,4 +1,4 @@
-package TestCasesScript;
+package TestCasesScript_Using_Json;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,11 +11,7 @@ import io.restassured.response.Response;
 public class CreateCustomer extends TestSetup{
 	
 	public static String idValue1, idValue2;
-	
-	public CreateCustomer() {
-		// TODO Auto-generated constructor stub
-	}
-	
+			
 	@Test (priority=1)
 	public String CreateCustomerValidSecretKey()
 	{

@@ -8,7 +8,7 @@ import io.restassured.response.Response;
 public class DeleteCustomerAPI extends TestSetup
 {
 	
-	public static Response DeleteRequestToWithValidSecretKey(String validSecretKey, String endPoint, String ID)
+	public static Response DeleteRequestToWithValidSecretKey(String validSecretKey, String endPoint)
 	{
 		Response response = given().auth().basic(validSecretKey, "")
 		.delete(endPoint);

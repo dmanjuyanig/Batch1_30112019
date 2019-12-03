@@ -3,17 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCasesScript.RetriveCustomer">
+      <class name="TestCasesScript_Using_ConfigProperties.Main">
         <methods>
-          <include name="afterSuite"/>
-          <include name="beforeClass"/>
-          <include name="afterMethod"/>
-          <include name="beforeSuite"/>
-          <include name="beforeMethod"/>
-          <include name="beforeTest"/>
-          <include name="RetriveCustomerWithValidSecretKey"/>
+          <include name="main"/>
         </methods>
-      </class> <!-- TestCasesScript.RetriveCustomer -->
+      </class> <!-- TestCasesScript_Using_ConfigProperties.Main -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

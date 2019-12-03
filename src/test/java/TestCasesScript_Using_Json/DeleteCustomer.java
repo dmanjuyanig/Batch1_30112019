@@ -1,4 +1,4 @@
-package TestCasesScript;
+package TestCasesScript_Using_Json;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import APIPackage.DeleteCustomerAPI;
 import APIPackage.RetriveCustomerAPI;
 import SetUpPackage.TestSetup;
+import TestCasesScript_Using_ConfigProperties.CreateCustomer_Config;
 import io.restassured.response.Response;
 
 public class DeleteCustomer extends TestSetup 
@@ -18,7 +19,7 @@ public class DeleteCustomer extends TestSetup
 		testLevelLog.get().assignCategory("Smoke");
 		
 		Response response = DeleteCustomerAPI.DeleteRequestToWithValidSecretKey(config.getValidSecretKey(), 
-							config.getCustomerAPIEndPoint() , "cus_GHmjr9iuXG1tPH");
+							config.getCustomerAPIEndPoint()+"/"+CreateCustomer_Config.idValue1);
 		
 		response.prettyPrint();
 		testLevelLog.get().info(response.body().asString());

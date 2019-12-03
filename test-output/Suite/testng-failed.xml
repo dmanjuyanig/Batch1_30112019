@@ -6,18 +6,17 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestJson.ValidateCreateCustomerAPI">
+      <class name="TestCasesScript_Using_ConfigProperties.DeleteCustomer">
         <methods>
           <include name="afterSuite"/>
           <include name="beforeClass"/>
-          <include name="validateSkip"/>
           <include name="afterMethod"/>
-          <include name="validateFail"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
+          <include name="DeleteCustomerWithValidSecretKey"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- TestJson.ValidateCreateCustomerAPI -->
+      </class> <!-- TestCasesScript_Using_ConfigProperties.DeleteCustomer -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -1,4 +1,4 @@
-package TestCasesScript;
+package TestCasesScript_Using_Json;
 
 import static io.restassured.RestAssured.given;
 

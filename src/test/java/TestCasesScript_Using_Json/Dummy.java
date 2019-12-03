@@ -1,4 +1,4 @@
-package TestCasesScript;
+package TestCasesScript_Using_Json;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
