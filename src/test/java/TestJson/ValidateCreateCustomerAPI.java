@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import APIPackage.CreateCustomerAPI;
+import APIPackage_ConfigProperties.CreateCustomerAPI_Config;
 import SetUpPackage.TestSetup;
 import UtilityPackage.DataProviderClass;
 import UtilityPackage.TestUtils;
@@ -21,7 +21,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Smoke");
-		Response response = CreateCustomerAPI.sendPostRequestToCreateCustomerWithValidSecretKey(data.get("email"), data.get("description"), 
+		Response response = CreateCustomerAPI_Config.sendPostRequestToCreateCustomerWithValidSecretKey(data.get("email"), data.get("description"), 
 				config.getValidSecretKey(), config.getCustomerAPIEndPoint());
 		
 		//testLevelLog.get().info(response.body().asString());
@@ -94,7 +94,7 @@ public class ValidateCreateCustomerAPI extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Aadya Reddy");
 		testLevelLog.get().assignCategory("Adhoc");
-		Response response = CreateCustomerAPI.sendPostRequestToCreateCustomerWithValidSecretKey(data.get("email"), data.get("description"), 
+		Response response = CreateCustomerAPI_Config.sendPostRequestToCreateCustomerWithValidSecretKey(data.get("email"), data.get("description"), 
 				config.getValidSecretKey(), config.getCustomerAPIEndPoint());
 		
 		response.prettyPrint();

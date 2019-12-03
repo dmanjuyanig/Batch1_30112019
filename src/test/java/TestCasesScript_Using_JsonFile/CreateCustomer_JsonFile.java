@@ -1,25 +1,27 @@
-package TestCasesScript_Using_Json;
+package TestCasesScript_Using_JsonFile;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import APIPackage.CreateCustomerAPI;
+
+import APIPackage_ConfigProperties.CreateCustomerAPI_Config;
+import APIPackage_HashMap.CreateCustomerAPI_Map;
+import APIPackage_JsonFile.CreateCustomerAPI_JsonFile;
 import SetUpPackage.TestSetup;
 import UtilityPackage.TestUtils;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class CreateCustomer extends TestSetup{
+public class CreateCustomer_JsonFile extends TestSetup{
 	
 	public static String idValue1, idValue2;
 			
 	@Test (priority=1)
-	public String CreateCustomerValidSecretKey()
+	public void CreateCustomerValidSecretKey()
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Smoke");
-		Response response = CreateCustomerAPI.sendPostRequestToCreateCustomerWithValidSecretKey(config.getCreateCustomerValidSecretKey_email(), 
-							config.getCreateCustomerValidSecretKey_description(), 
-							config.getValidSecretKey(), 
+		
+		Response response = CreateCustomerAPI_JsonFile.sendPostRequestToCreateCustomerWithValidSecretKey(config.getValidSecretKey(), 
 							config.getCustomerAPIEndPoint());
 		
 		//testLevelLog.get().info(response.body().asString());
@@ -39,8 +41,6 @@ public class CreateCustomer extends TestSetup{
 		idValue1 = response.jsonPath().get("id");
 		System.out.println("idValue1 : " + idValue1);
 		Assert.assertNotNull(idValue1);
-		
-		return idValue1;
 	}
 	
 	@Test (priority=2)
@@ -48,7 +48,7 @@ public class CreateCustomer extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Kruthi Reddy");
 		testLevelLog.get().assignCategory("Adhoc");
-		Response response = CreateCustomerAPI.sendPostRequestToCreateCustomerWithValidSecretKey(config.getCreateCustomerValidParameter_email(), 
+		Response response = CreateCustomerAPI_JsonFile.sendPostRequestToCreateCustomerWithInvalidSecretKey(config.getCreateCustomerValidParameter_email(), 
 							config.getCreateCustomerValidParameter_description(), 
 							config.getValidSecretKey(), 
 							config.getCustomerAPIEndPoint());
@@ -77,7 +77,8 @@ public class CreateCustomer extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Aadvike Reddy");
 		testLevelLog.get().assignCategory("Exploratory");
-		Response response = CreateCustomerAPI.sendPostRequestToCreateCustomerWithValidSecretKey(config.getCreateCustomerWithInvalidParameter_email(), 
+		
+		Response response = CreateCustomerAPI_JsonFile.sendPostRequestToCreateCustomerWithInvalidParameter(config.getCreateCustomerWithInvalidParameter_email(), 
 							config.getCreateCustomerWithInvalidParameter_description(), 
 							config.getValidSecretKey(), 
 							config.getCustomerAPIEndPoint());
@@ -89,7 +90,7 @@ public class CreateCustomer extends TestSetup{
 		
 		//Assert to verify the status code
 		testLevelLog.get().info("Status code in the response :- " +response.getStatusCode());
-		Assert.assertEquals(response.statusCode(), config.getBadRequestResponseCode());
+		Assert.assertEquals(response.statusCode(), config.getUnauthorizedErrorResponseCode());
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
 		System.out.println("Error Message : " + jsonPathEvaluator.get("error.message"));
@@ -107,7 +108,7 @@ public class CreateCustomer extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Aadya Reddy");
 		testLevelLog.get().assignCategory("Exploratory");
-		Response response = CreateCustomerAPI.sendPostRequestToCreateCustomerWithInvalidSecretKey(config.getCreateCustomerWithInvalidSecretKey_email(),
+		Response response = CreateCustomerAPI_JsonFile.sendPostRequestToCreateCustomerWithInvalidSecretKey(config.getCreateCustomerWithInvalidSecretKey_email(),
 							config.getCreateCustomerWithInvalidSecretKey_description(), 
 							config.getInValidSecretKey(), 
 							config.getCustomerAPIEndPoint()); 
@@ -137,7 +138,7 @@ public class CreateCustomer extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Regression");
-		Response response = CreateCustomerAPI.sendPostRequestToCreateCustomerWithoutSecretKey(config.getCreateCustomerWithNoSecretKey_email(),
+		Response response = CreateCustomerAPI_JsonFile.sendPostRequestToCreateCustomerWithoutSecretKey(config.getCreateCustomerWithNoSecretKey_email(),
 							config.getCreateCustomerWithNoSecretKey_description(), 
 							config.getCustomerAPIEndPoint()); 
 

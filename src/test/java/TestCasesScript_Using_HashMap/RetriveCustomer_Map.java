@@ -1,21 +1,26 @@
-package TestCasesScript_Using_ConfigProperties;
+package TestCasesScript_Using_HashMap;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import APIPackage_ConfigProperties.RetriveCustomerAPI_Config;
+import APIPackage_HashMap.RetriveCustomerAPI_Map;
 import SetUpPackage.TestSetup;
+import UtilityPackage.TestUtils;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import static io.restassured.RestAssured.given;
 
-public class RetriveCustomer_Config extends TestSetup{
+public class RetriveCustomer_Map extends TestSetup{
 		
 	@Test (priority=1)
-	public static void RetriveCustomerWithValidSecretKey()
+	public void RetriveCustomerWithValidSecretKey()
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Smoke");
-		Response response = RetriveCustomerAPI_Config.GetRequestToCreateCustomerWithValidSecretKey(config.getValidSecretKey(), 
-							config.getCustomerAPIEndPoint()+"/"+CreateCustomer_Config.idValue1);
+
+		Response response = RetriveCustomerAPI_Map.GetRequestToCreateCustomerWithValidSecretKey(config.getValidSecretKey(), 
+							config.getCustomerAPIEndPoint()+"/"+CreateCustomer_Map.idValue1);
 		
 		response.prettyPrint();
 		testLevelLog.get().info(response.body().asString());
@@ -48,6 +53,5 @@ public class RetriveCustomer_Config extends TestSetup{
 				
 		//Assert to verify the response time
 		//Assert.assertTrue(response.getTime()<=config.getResponseTime());
-		System.out.println("*********Execution of RetriveCustomerWithValidSecretKey is completed*********");
 	}
 }

@@ -1,11 +1,11 @@
-package APIPackage;
+package APIPackage_JsonFile;
 
 import static io.restassured.RestAssured.given;
 
 import SetUpPackage.TestSetup;
 import io.restassured.response.Response;
 
-public class RetriveCustomerAPI extends TestSetup 
+public class RetriveCustomerAPI_JsonFile extends TestSetup 
 {
 	public static Response GetRequestToCreateCustomerWithValidSecretKey(String validSecretKey, String endPoint)
 	{

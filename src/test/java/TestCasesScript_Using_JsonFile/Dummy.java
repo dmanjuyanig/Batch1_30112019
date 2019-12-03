@@ -1,10 +1,16 @@
-package TestCasesScript_Using_Json;
+package TestCasesScript_Using_JsonFile;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import APIPackage_ConfigProperties.RetriveCustomerAPI_Config;
+
 import static io.restassured.RestAssured.given;
-import APIPackage.RetriveCustomerAPI;
+
+import java.io.File;
+
 import SetUpPackage.TestSetup;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class Dummy extends TestSetup{
@@ -17,9 +23,8 @@ public class Dummy extends TestSetup{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Smoke");
 		
-		Response response = given().auth().basic("sk_test_4eC39HqLyjWDarjtT1zdp7dc", "")
-				.formParam("email", "ManjuReddy@gmail.com")
-				.formParam("description", "description added")
+		Response response = given().contentType(ContentType.URLENC).auth().basic("sk_test_4eC39HqLyjWDarjtT1zdp7dc", "")
+				.body(new File("./src/test/java/TestCasesScript_Using_JsonFile/CreateUser.json"))
 				.post("https://api.stripe.com/v1/customers");
 		
 		response.prettyPrint();

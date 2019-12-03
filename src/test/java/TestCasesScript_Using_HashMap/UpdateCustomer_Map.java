@@ -1,19 +1,19 @@
-package TestCasesScript_Using_Json;
+package TestCasesScript_Using_HashMap;
 
 import static io.restassured.RestAssured.given;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import APIPackage.CreateCustomerAPI;
-import APIPackage.RetriveCustomerAPI;
+import APIPackage_ConfigProperties.CreateCustomerAPI_Config;
+import APIPackage_ConfigProperties.RetriveCustomerAPI_Config;
 import SetUpPackage.TestSetup;
 import UtilityPackage.TestUtils;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class UpdateCustomer extends TestSetup{
+public class UpdateCustomer_Map extends TestSetup{
 	
 	@Test (priority=1)
 	public void RetriveCustomerValidSecretKey()

@@ -1,11 +1,11 @@
-package APIPackage;
+package APIPackage_JsonFile;
 
 import static io.restassured.RestAssured.given;
 
 import SetUpPackage.TestSetup;
 import io.restassured.response.Response;
 
-public class DeleteCustomerAPI extends TestSetup
+public class DeleteCustomerAPI_JsonFile extends TestSetup
 {
 	
 	public static Response DeleteRequestToWithValidSecretKey(String validSecretKey, String endPoint)

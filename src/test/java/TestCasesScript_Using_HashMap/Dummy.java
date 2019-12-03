@@ -1,4 +1,4 @@
-package TestCasesScript_Using_ConfigProperties;
+package TestCasesScript_Using_HashMap;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="Listeners.TestListenres"/>
-  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestCasesScript_Using_ConfigProperties.DeleteCustomer">
+      <class name="TestCasesScript_Using_HashMap.RetriveCustomer_Map">
         <methods>
           <include name="afterSuite"/>
           <include name="beforeClass"/>
           <include name="afterMethod"/>
+          <include name="RetriveCustomerWithValidSecretKey"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
-          <include name="DeleteCustomerWithValidSecretKey"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- TestCasesScript_Using_ConfigProperties.DeleteCustomer -->
+      </class> <!-- TestCasesScript_Using_HashMap.RetriveCustomer_Map -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

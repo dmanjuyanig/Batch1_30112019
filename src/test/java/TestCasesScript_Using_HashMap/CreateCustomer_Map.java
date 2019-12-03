@@ -1,24 +1,26 @@
-package TestCasesScript_Using_ConfigProperties;
+package TestCasesScript_Using_HashMap;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import APIPackage_ConfigProperties.CreateCustomerAPI_Config;
+import APIPackage_HashMap.CreateCustomerAPI_Map;
 import SetUpPackage.TestSetup;
 import UtilityPackage.TestUtils;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class CreateCustomer_Config extends TestSetup{
+public class CreateCustomer_Map extends TestSetup{
 	
 	public static String idValue1, idValue2;
-	
-		
+			
 	@Test (priority=1)
-	public static void CreateCustomerValidSecretKey()
+	public void CreateCustomerValidSecretKey()
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Smoke");
-		Response response = CreateCustomerAPI_Config.sendPostRequestToCreateCustomerWithValidSecretKey(config.getCreateCustomerValidSecretKey_email(), 
+		
+		Response response = CreateCustomerAPI_Map.sendPostRequestToCreateCustomerWithValidSecretKey(config.getCreateCustomerValidSecretKey_email(), 
 							config.getCreateCustomerValidSecretKey_description(), 
 							config.getValidSecretKey(), 
 							config.getCustomerAPIEndPoint());
@@ -40,7 +42,6 @@ public class CreateCustomer_Config extends TestSetup{
 		idValue1 = response.jsonPath().get("id");
 		System.out.println("idValue1 : " + idValue1);
 		Assert.assertNotNull(idValue1);
-		System.out.println("*********Execution of CreateCustomerValidSecretKey is completed*********");
 	}
 	
 	@Test (priority=2)
@@ -48,7 +49,7 @@ public class CreateCustomer_Config extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Kruthi Reddy");
 		testLevelLog.get().assignCategory("Adhoc");
-		Response response = CreateCustomerAPI_Config.sendPostRequestToCreateCustomerWithValidSecretKey(config.getCreateCustomerValidParameter_email(), 
+		Response response = CreateCustomerAPI_Map.sendPostRequestToCreateCustomerWithValidSecretKey(config.getCreateCustomerValidParameter_email(), 
 							config.getCreateCustomerValidParameter_description(), 
 							config.getValidSecretKey(), 
 							config.getCustomerAPIEndPoint());
@@ -70,7 +71,6 @@ public class CreateCustomer_Config extends TestSetup{
 		idValue2 = response.jsonPath().get("id");
 		System.out.println("idValue2 : " + idValue2);
 		Assert.assertNotNull(idValue2);
-		System.out.println("*********Execution of CreateCustomerValidParameter is completed*********");
 	}
 	
 	@Test (priority=3)
@@ -78,7 +78,8 @@ public class CreateCustomer_Config extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Aadvike Reddy");
 		testLevelLog.get().assignCategory("Exploratory");
-		Response response = CreateCustomerAPI_Config.sendPostRequestToCreateCustomerWithValidSecretKey(config.getCreateCustomerWithInvalidParameter_email(), 
+		
+		Response response = CreateCustomerAPI_Map.sendPostRequestToCreateCustomerWithInvalidParameter(config.getCreateCustomerWithInvalidParameter_email(), 
 							config.getCreateCustomerWithInvalidParameter_description(), 
 							config.getValidSecretKey(), 
 							config.getCustomerAPIEndPoint());
@@ -90,7 +91,7 @@ public class CreateCustomer_Config extends TestSetup{
 		
 		//Assert to verify the status code
 		testLevelLog.get().info("Status code in the response :- " +response.getStatusCode());
-		Assert.assertEquals(response.statusCode(), config.getBadRequestResponseCode());
+		Assert.assertEquals(response.statusCode(), config.getUnauthorizedErrorResponseCode());
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
 		System.out.println("Error Message : " + jsonPathEvaluator.get("error.message"));
@@ -101,7 +102,6 @@ public class CreateCustomer_Config extends TestSetup{
 		//Assert that that ID field is null
 		String idValue = response.jsonPath().get("id");
 		Assert.assertNull(idValue);
-		System.out.println("*********Execution of CreateCustomerWithInvalidParameter is completed*********");
 	}
 	
 	@Test(priority =4)
@@ -109,7 +109,7 @@ public class CreateCustomer_Config extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Aadya Reddy");
 		testLevelLog.get().assignCategory("Exploratory");
-		Response response = CreateCustomerAPI_Config.sendPostRequestToCreateCustomerWithInvalidSecretKey(config.getCreateCustomerWithInvalidSecretKey_email(),
+		Response response = CreateCustomerAPI_Map.sendPostRequestToCreateCustomerWithInvalidSecretKey(config.getCreateCustomerWithInvalidSecretKey_email(),
 							config.getCreateCustomerWithInvalidSecretKey_description(), 
 							config.getInValidSecretKey(), 
 							config.getCustomerAPIEndPoint()); 
@@ -132,7 +132,6 @@ public class CreateCustomer_Config extends TestSetup{
 		//Assert that that ID field is null
 		String idValue = response.jsonPath().get("id");
 		Assert.assertNull(idValue);
-		System.out.println("*********Execution of CreateCustomerWithInvalidSecretKey is completed*********");
 	}
 	
 	@Test(priority =5)
@@ -140,7 +139,7 @@ public class CreateCustomer_Config extends TestSetup{
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Regression");
-		Response response = CreateCustomerAPI_Config.sendPostRequestToCreateCustomerWithoutSecretKey(config.getCreateCustomerWithNoSecretKey_email(),
+		Response response = CreateCustomerAPI_Map.sendPostRequestToCreateCustomerWithoutSecretKey(config.getCreateCustomerWithNoSecretKey_email(),
 							config.getCreateCustomerWithNoSecretKey_description(), 
 							config.getCustomerAPIEndPoint()); 
 
@@ -162,6 +161,5 @@ public class CreateCustomer_Config extends TestSetup{
 		//Assert that that ID field is null
 		String idValue = response.jsonPath().get("id");
 		Assert.assertNull(idValue);
-		System.out.println("*********Execution of CreateCustomerWithNoSecretKey is completed*********");
 	}	
 }

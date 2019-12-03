@@ -1,29 +1,26 @@
-package TestCasesScript_Using_Json;
+package TestCasesScript_Using_JsonFile;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import APIPackage.RetriveCustomerAPI;
+
+import APIPackage_ConfigProperties.RetriveCustomerAPI_Config;
+import APIPackage_HashMap.RetriveCustomerAPI_Map;
 import SetUpPackage.TestSetup;
 import UtilityPackage.TestUtils;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
-public class RetriveCustomer extends TestSetup{
+public class RetriveCustomer_JsonFile extends TestSetup{
 		
 	@Test (priority=1)
 	public void RetriveCustomerWithValidSecretKey()
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Smoke");
-//		CreateCustomer cc = new CreateCustomer();
-//		cc.CreateCustomerValidSecretKey();
-		System.out.println("value 2 - " + CreateCustomer.idValue1);
-		Response response = RetriveCustomerAPI.GetRequestToCreateCustomerWithValidSecretKey(config.getValidSecretKey(), 
-							config.getValidSecretKey()+"/"+CreateCustomer.idValue1);
-		
-		//System.out.println(config.getCustomerAPIEndPoint()+"/"+CreateCustomer.idValue1);
-		//System.out.println(CreateCustomer.idValue1);
+
+		Response response = RetriveCustomerAPI_Map.GetRequestToCreateCustomerWithValidSecretKey(config.getValidSecretKey(), 
+							config.getCustomerAPIEndPoint()+"/"+CreateCustomer_JsonFile.idValue1);
 		
 		response.prettyPrint();
 		testLevelLog.get().info(response.body().asString());

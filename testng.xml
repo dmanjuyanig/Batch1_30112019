@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel = "none">
-<listeners>
-	<listener class-name= "Listeners.TestListenres"></listener>
-</listeners>
+<suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-    	<class name="TestCasesScript_Using_ConfigProperties.CreateCustomer"/>
-    	<class name="TestCasesScript_Using_ConfigProperties.RetriveCustomer"/>
-    	<class name="TestCasesScript_Using_ConfigProperties.DeleteCustomer"/>
+      <class name="TestCasesScript_Using_ConfigProperties.CreateCustomer_Config"/>
+      <class name="TestCasesScript_Using_ConfigProperties.RetriveCustomer_Config"/>
+      <class name="TestCasesScript_Using_ConfigProperties.DeleteCustomer_Config"/>
+      
+      <class name="TestCasesScript_Using_HashMap.CreateCustomer_Map"/>
+      <class name="TestCasesScript_Using_HashMap.RetriveCustomer_Map"/>
+      <class name="TestCasesScript_Using_HashMap.DeleteCustomer_Map"/>
+
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

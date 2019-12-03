@@ -1,4 +1,4 @@
-package TestCasesScript_Using_ConfigProperties;
+package TestCasesScript_Using_JsonFile;
 
 import static io.restassured.RestAssured.given;
 
@@ -13,7 +13,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 
-public class UpdateCustomer_Config extends TestSetup{
+public class UpdateCustomer_JsonFile extends TestSetup{
 	
 	@Test (priority=1)
 	public void RetriveCustomerValidSecretKey()
