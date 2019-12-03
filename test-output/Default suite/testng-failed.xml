@@ -8,10 +8,10 @@
           <include name="afterSuite"/>
           <include name="beforeClass"/>
           <include name="afterMethod"/>
-          <include name="RetriveCustomerValidSecretKey"/>
           <include name="beforeSuite"/>
           <include name="beforeMethod"/>
           <include name="beforeTest"/>
+          <include name="RetriveCustomerWithValidSecretKey"/>
         </methods>
       </class> <!-- TestCasesScript.RetriveCustomer -->
     </classes>

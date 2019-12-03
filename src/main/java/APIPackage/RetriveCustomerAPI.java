@@ -15,9 +15,17 @@ public class RetriveCustomerAPI extends TestSetup
 		return response;
 	}
 	
-	public static Response GetRequestToCreateCustomerWithInvalidSecretKey(String inValidSecretKey, String endPoint)
+	public static Response GetRequestToCreateCustomerWithInvalidSecretKey(String inValidSecretKey, String endPoint, String ID)
 	{
 		Response response = given().auth().basic(inValidSecretKey, "")
+		.get(endPoint);
+		
+		return response;
+	}
+	
+	public static Response GetRequestToWithInvalidCustomerID(String validSecretKey, String endPoint, String InvalidID)
+	{
+		Response response = given().auth().basic(validSecretKey, "")
 		.get(endPoint);
 		
 		return response;

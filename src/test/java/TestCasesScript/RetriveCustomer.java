@@ -1,28 +1,29 @@
 package TestCasesScript;
 
-import static io.restassured.RestAssured.given;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import APIPackage.CreateCustomerAPI;
 import APIPackage.RetriveCustomerAPI;
 import SetUpPackage.TestSetup;
 import UtilityPackage.TestUtils;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
+import static io.restassured.RestAssured.given;
 
 public class RetriveCustomer extends TestSetup{
-	
+		
 	@Test (priority=1)
-	public void RetriveCustomerValidSecretKey()
+	public void RetriveCustomerWithValidSecretKey()
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Smoke");
-		
+//		CreateCustomer cc = new CreateCustomer();
+//		cc.CreateCustomerValidSecretKey();
+		System.out.println("value 2 - " + CreateCustomer.idValue1);
 		Response response = RetriveCustomerAPI.GetRequestToCreateCustomerWithValidSecretKey(config.getValidSecretKey(), 
-							config.getGetCustomerAPIEndPoint());
+							config.getValidSecretKey()+"/"+CreateCustomer.idValue1);
+		
+		//System.out.println(config.getCustomerAPIEndPoint()+"/"+CreateCustomer.idValue1);
+		//System.out.println(CreateCustomer.idValue1);
 		
 		response.prettyPrint();
 		testLevelLog.get().info(response.body().asString());
@@ -56,34 +57,4 @@ public class RetriveCustomer extends TestSetup{
 		//Assert to verify the response time
 		//Assert.assertTrue(response.getTime()<=config.getResponseTime());
 	}
-
-	@Test (priority=2)
-	public void RetriveCustomerInvalidSecretKey()
-	{
-		testLevelLog.get().assignAuthor("Manju Reddy");
-		testLevelLog.get().assignCategory("Smoke");
-		
-		Response response = RetriveCustomerAPI.GetRequestToCreateCustomerWithInvalidSecretKey(config.getInValidSecretKey(), 
-							config.getGetCustomerAPIEndPoint());
-		
-		logResponseInReport(response.asString());
-		response.prettyPrint();
-		
-		System.out.println(response.statusCode());
-		
-		//Assert to verify the status code
-		testLevelLog.get().info("Status code inthe response :- " +response.getStatusCode());
-		Assert.assertEquals(response.statusCode(), config.getUnauthorizedErrorResponseCode());
-		
-		JsonPath jsonPathEvaluator = response.jsonPath();
-		System.out.println("Error Message : " + jsonPathEvaluator.get("error.message"));
-		
-		//Assert to json response body contains ID field
-		Assert.assertTrue(TestUtils.jsonHasKey(response.asString(), "error"));
-		
-		//Assert that that ID field is null
-		String idValue = response.jsonPath().get("id");
-		Assert.assertNull(idValue);
-	}
-
 }

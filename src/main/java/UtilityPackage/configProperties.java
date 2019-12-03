@@ -104,6 +104,10 @@ public interface configProperties extends Config{
 	@Key("testDataSheet")
 	String getTestDataSheetName();
 	
+	//*************Negative Validation*************************
+	@Key("invalidCustomerID")
+	String getInvalidCustomerID();
+	
 
 	
 	

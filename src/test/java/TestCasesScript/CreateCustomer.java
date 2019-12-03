@@ -1,9 +1,7 @@
 package TestCasesScript;
 
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import APIPackage.CreateCustomerAPI;
 import SetUpPackage.TestSetup;
 import UtilityPackage.TestUtils;
@@ -12,8 +10,14 @@ import io.restassured.response.Response;
 
 public class CreateCustomer extends TestSetup{
 	
+	public static String idValue1, idValue2;
+	
+	public CreateCustomer() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Test (priority=1)
-	public void CreateCustomerValidSecretKey()
+	public String CreateCustomerValidSecretKey()
 	{
 		testLevelLog.get().assignAuthor("Manju Reddy");
 		testLevelLog.get().assignCategory("Smoke");
@@ -27,17 +31,20 @@ public class CreateCustomer extends TestSetup{
 		response.prettyPrint();
 		
 		//Assert to verify the status code
-		testLevelLog.get().info("Status code inthe response :- " +response.getStatusCode());
+		testLevelLog.get().info("Status code in the response :- " +response.getStatusCode());
 		Assert.assertEquals(response.statusCode(), 200);
 		Assert.assertEquals(response.statusCode(), config.getSuccessResponseCode());
 		
 		//Assert to json response body contains ID field
-		testLevelLog.get().info("Status code inthe response :- " +response.jsonPath().get("id"));
+		testLevelLog.get().info("Status code in the response :- " +response.jsonPath().get("id"));
 		Assert.assertTrue(TestUtils.jsonHasKey(response.asString(), "id"));
 		
 		//Assert that that ID field is not null
-		String idValue = response.jsonPath().get("id");
-		Assert.assertNotNull(idValue);
+		idValue1 = response.jsonPath().get("id");
+		System.out.println("idValue1 : " + idValue1);
+		Assert.assertNotNull(idValue1);
+		
+		return idValue1;
 	}
 	
 	@Test (priority=2)
@@ -55,17 +62,18 @@ public class CreateCustomer extends TestSetup{
 		response.prettyPrint();
 		
 		//Assert to verify the status code
-		testLevelLog.get().info("Status code inthe response :- " +response.getStatusCode());
+		testLevelLog.get().info("Status code in the response :- " +response.getStatusCode());
 		Assert.assertEquals(response.statusCode(), 200);
 		Assert.assertEquals(response.statusCode(), config.getSuccessResponseCode());
 		
 		//Assert to json response body contains ID field
-		testLevelLog.get().info("Status code inthe response :- " +response.jsonPath().get("id"));
+		testLevelLog.get().info("Status code in the response :- " +response.jsonPath().get("id"));
 		Assert.assertTrue(TestUtils.jsonHasKey(response.asString(), "id"));
 		
 		//Assert that that ID field is not null
-		String idValue = response.jsonPath().get("id");
-		Assert.assertNotNull(idValue);
+		idValue2 = response.jsonPath().get("id");
+		System.out.println("idValue2 : " + idValue2);
+		Assert.assertNotNull(idValue2);
 	}
 	
 	@Test (priority=3)
@@ -84,7 +92,7 @@ public class CreateCustomer extends TestSetup{
 		System.out.println(response.statusCode());
 		
 		//Assert to verify the status code
-		testLevelLog.get().info("Status code inthe response :- " +response.getStatusCode());
+		testLevelLog.get().info("Status code in the response :- " +response.getStatusCode());
 		Assert.assertEquals(response.statusCode(), config.getBadRequestResponseCode());
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
@@ -114,7 +122,7 @@ public class CreateCustomer extends TestSetup{
 		System.out.println(response.statusCode());
 		
 		//Assert to verify the status code
-		testLevelLog.get().info("Status code inthe response :- " +response.getStatusCode());
+		testLevelLog.get().info("Status code in the response :- " +response.getStatusCode());
 		Assert.assertEquals(response.statusCode(), config.getUnauthorizedErrorResponseCode());
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
@@ -143,7 +151,7 @@ public class CreateCustomer extends TestSetup{
 		System.out.println(response.statusCode());
 		
 		//Assert to verify the status code
-		testLevelLog.get().info("Status code inthe response :- " +response.getStatusCode());
+		testLevelLog.get().info("Status code in the response :- " +response.getStatusCode());
 		Assert.assertEquals(response.statusCode(), config.getUnauthorizedErrorResponseCode());
 		
 		JsonPath jsonPathEvaluator = response.jsonPath();
@@ -155,6 +163,5 @@ public class CreateCustomer extends TestSetup{
 		//Assert that that ID field is null
 		String idValue = response.jsonPath().get("id");
 		Assert.assertNull(idValue);
-	}
-
+	}	
 }
